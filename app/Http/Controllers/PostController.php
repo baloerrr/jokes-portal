@@ -26,7 +26,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Posts', [
+            'posts' => Post::all()
+        ]);
     }
 
     /**
@@ -40,9 +42,11 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Post $post)
     {
-        //
+        return Inertia::render('Post', [
+            'post' => $post
+        ]);
     }
 
     /**

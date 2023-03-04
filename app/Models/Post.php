@@ -10,6 +10,7 @@ class Post extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    protected $with = ['user:id,name', 'comments.user:id,name', 'comments.replies.user:id,name', 'comments.replies.replies.user:id,name'];
 
     public function user()
     {
